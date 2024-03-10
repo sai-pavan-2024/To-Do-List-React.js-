@@ -1,0 +1,43 @@
+import N from './new';
+import './index.css';
+import React ,{useState} from 'react';
+function Todo(){
+    let [count,display]=useState(0);
+    return(
+        <>
+        <div className='container'>
+            <h1>TO-DO LIST</h1>
+            <div>
+                <input type='text' id='inpu'/>
+                <button onClick={()=>{
+                    let t=document.getElementById('inpu').value;
+                    let r=document.createElement("li");
+                    r.id='list';
+                    document.getElementById('results').appendChild(r);
+                    r.innerText=t;
+                    document.getElementById('inpu').value='';
+                }}>Add</button>
+                <button onClick={()=>{
+                    const li=document.getElementById('list');
+                    if(li.firstChild===li.lastChild){
+                        li.remove(li.firstChild);
+                        li.disable=true;
+                    }
+                    else{
+                        li.remove(li.lastChild);
+                    }
+                    
+                }}>
+                    Back
+                </button>
+            </div>
+            <div id='results'>
+                Results:
+                <br/>
+            </div>
+        </div>
+        </>
+    )
+}
+
+export default Todo;

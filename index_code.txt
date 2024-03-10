@@ -1,0 +1,9 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import H from './Header';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <H>This is Header children</H>
+);
